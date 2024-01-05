@@ -1,70 +1,54 @@
 \documentclass[10pt, aspectratio=169]{beamer}
 
+\input{fqsstyle/init.tex}
+
 \mode<presentation>{%
     \usetheme{fqs}
     \usecolortheme{fqs}
 }
 
-\usepackage{hyperref}
-\usepackage{xcolor}
-\usepackage{amsmath}
-\usepackage{wrapfig}
-\usepackage{graphicx}
-\usepackage{helvet}
-\usepackage[T1]{fontenc}
-\usepackage{tikz}
-\usetikzlibrary{shapes, arrows, calc, positioning}
-\usetikzlibrary{decorations.pathreplacing}
-\usepackage{amsmath,amssymb, amsfonts}
-\usepackage{lipsum}
-\usepackage{verbatim}
-\usepackage{datetime}
-\usepackage{setspace}
-
-\renewcommand{\familydefault}{\sfdefault}
-\renewcommand\mathfamilydefault{}
-\newcommand{\colorbf}[1]{{\color{umGreen}\textbf{#1}}}
-
-\newdateformat{dmydate}{%
-  \twodigit{\THEDAY}~\monthname[\THEMONTH] \THEYEAR%
-}
-
-\title[UM Template]{This \LaTeX Template is Replication of State University of Malang}
-\subtitle[Short subtitle here]{Put Your Sub Title Here}
+\title[UM Template]{A Beamer Theme for State University of Malang}
+\subtitle[YABT]{This is a Beamer Theme Styled After State University of Malang's (UM) Powerpoint Template.}
 \titlebackground{fqsstyle/assets/gambar-um.jpg}
-\author{Firman Qashdus sabil} % Your name
+\author{Firman Q. S.} % Your name
 \institute[Universitas Negeri Malang] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
 {\noindent
-    \textit{firmanqs@students.ac.id}\par% Your email address
-    Group\par
-    Position\par
+    \textit{firman.qashdus.2103216@students.um.ac.id}\par% Your email address
+    Physics Departement\par
+    Students\par
 }
-\date{\dmydate\today} % Date, can be changed to a custom date
+\date{\dmydate\today} % Can be changed to a custom date
 
 \setbeamersize{text margin left=.05\pdfpagewidth,text margin right=.05\pdfpagewidth}
+
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Standart title with background image
+%% TITLE PAGE: with background image
 %%
 \maketitle
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Title page without background image
+%%  TITLE PAGE: without background image
 %%
 {
   \setbeamertemplate{headline}{}
   \begin{frame}
+      %%%%%%%%%%%%%%%%%%%%%%
+      %% Featured Image (comment or delete if not used)
+      %%
       \begin{tikzpicture}[overlay, remember picture]
           \node[left=1.0cm] at (current page.1){%
               \includegraphics[width=6.5cm]{contents/images/optics-lab}
           };
       \end{tikzpicture}
+      % the title page itself
       \titlepage%
-      %%%%%%%%%%%%%%%%%%%%%%
-      %% Featured Image
-      %%
   \end{frame}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION PAGE: without background image
+%%
 \section{Installation}
 {
     \setbeamertemplate{headline}{}
@@ -80,65 +64,53 @@
         \end{tikzpicture}
     \end{frame}
 }
-\begin{frame}{Installation}
-    To install the the UM beamer theme you need to do the following
-    \begin{itemize}
-        \item Download 1 the UM beamer package
-        \item Download 2 the UM beamer package
-        \item Download 3 the broh beamer package
-        \item Follow the \href{https://docs.xfel.eu/share/proxy/alfresco/api/node/content/workspace/SpacesStore/92e260f4-e0a7-4463-a812-40a180bd6e75/IN-2012-003-01_LaTeX_User_Guide.pdf?a=true}{\colorbf{European XFEL LaTeX User Guide}} on how to install latex packages.
-    \end{itemize}
-    \begin{block}{On Linux}
-        Extract the package file to\\
-        \centerline{\textit{$\sim$/texmf/tex/latex/}}
-        and run
-        \centerline{ \textit{texhash   $\quad\sim$/texmf/tex/latex/ }}
-        in your console.
-    \end{block}
+
+\begin{frame}{How to Use?}
+    To use this latex beamer template in local machine you need to do the following:
+    \begin{enumerate}
+        \item Install latex distibution
+              \begin{itemize}
+                  \item[$\blacktriangleright$] for \textbf{Linux}: \href{https://www.google.com/search?q=how to install latex in linux?}{TeX Live}
+                  \item[$\blacktriangleright$] for \textbf{Mac}: \href{https://www.google.com/search?q=how to install mac tex on mac?}{Mac Tex}
+                  \item[$\blacktriangleright$] for \textbf{Windows}: \href{https://www.google.com/search?q=how to install miktex in windows?}{MiKTeX}
+              \end{itemize}
+        \item Install \LaTeX editor, The following is a list of common editors that you can use
+              \begin{itemize}
+                  \item[$\blacktriangleright$] \href{https://code.visualstudio.com/}{Visual Studio Code} with \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{LaTex Workshop} extension.
+                  \item[$\blacktriangleright$] \href{http://www.xm1math.net/texmaker/}{Texmaker}.
+                  \item[$\blacktriangleright$] \href{http://texstudio.org/}{TeXStudio}.
+                  \item[$\blacktriangleright$] \href{https://www.gnu.org/software/emacs/}{GNU Emacs} with its \href{https://gnu.org/software/auctex/}{AUC-TeX} Package.
+               \end{itemize}
+        \item Download 3 this beamer template and compile.
+    \end{enumerate}
 \end{frame}
 
-\section{Usage}
-\begin{frame}[fragile]{Usage}
-    Start your Latex beamer file with:
-    \begin{block}{}
-\begin{verbatim}
-\documentclass[10pt,aspectratio=169]{beamer}
-\mode<presentation> {
-  \usetheme{UM}
-  \usecolortheme{EuXFEL}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION PAGE: without background image
+%%
+\section{List}
+{
+    \setbeamertemplate{headline}{}
+    \begin{frame}
+        \sectionpage%
+        %%%%%%%%%%%%%%%%%%%%%%
+        %% Featured Image
+        %%
+        \begin{tikzpicture}[overlay,remember picture]
+            \node[left=2cm] at (current page.2){%
+                \includegraphics[width=6.5cm]{contents/images/prism-light-dispersion}
+            };
+        \end{tikzpicture}
+    \end{frame}
 }
-\end{verbatim}
-    \end{block}
-\end{frame}
 
-\begin{frame}{Frame Title}
+\begin{frame}{Title}
     \begin{itemize}
-    \item \lipsum[2][2]
+    \item \lipsum[1][5]
         \begin{itemize}
-        \item \lipsum[3][2]
+        \item \lipsum[1][5]
             \begin{itemize}
-            \item \lipsum[4][2]
-            \end{itemize}
-        \end{itemize}
-    \end{itemize}
-
-    \begin{block}{Block Title}
-        Consider a \colorbf{function} $\rho(r,\phi)$ such that
-        \begin{equation}
-            \label{eq:1}
-            \int_{\gamma} \rho(r,\phi)\, drd\phi=\frac{\pi}{2}
-        \end{equation}
-    \end{block}
-\end{frame}
-
-
-\begin{frame}{Frame Title}
-    \begin{itemize}
-    \item \lipsum[2][2]
-        \begin{itemize}
-        \item \lipsum[3][2]
-            \begin{itemize}
-            \item \lipsum[4][2]
+            \item \lipsum[1][5]
             \end{itemize}
         \end{itemize}
     \end{itemize}
@@ -146,43 +118,57 @@
     \begin{block}{Block Title}
         Consider a \colorbf{function} $\rho(r,\phi)$ such that
         \begin{equation*}
-            \mathcal{L} (\theta) = \log \sum_{k=1}^{\lvert Z \rvert} Q(z_k \mid y) \frac{P( z_k,  y \mid \theta)}{Q(z_k \mid y)} \geq \sum_{k=1}^{\lvert Z \rvert} Q(z_k \mid y) \log \frac{P( z_k,  y \mid \theta)}{Q(z_k \mid y)}
+            R_{\mu \nu} - {1 \over 2}R \, g_{\mu \nu} + \Lambda g_{\mu \nu}= {8 \pi G \over c^4} T_{\mu \nu}
         \end{equation*}
     \end{block}
 \end{frame}
 
-
-\begin{frame}{Multiple Columns}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% SECTION PAGE: without background image
+%%
+\section{Multiple Columns}
+{
+    \setbeamertemplate{headline}{}
+    \begin{frame}
+        \sectionpage%
+        %%%%%%%%%%%%%%%%%%%%%%
+        %% Featured Image
+        %%
+        \begin{tikzpicture}[overlay,remember picture]
+            \node[left=2cm] at (current page.2){%
+                \includegraphics[width=6.5cm]{contents/images/prism-light-dispersion}
+            };
+        \end{tikzpicture}
+    \end{frame}
+}
+\begin{frame}[fragile]{Feynman (3-Point Vertex)}
     \begin{columns}[onlytextwidth]
-        \begin{column}{0.5\textwidth}
-            \lipsum[6][1-4]\\
+        \begin{column}{0.4\textwidth}
             \begin{center}
-                \def\ry{.6}        % vertical radius outer ellipse
-                \def\kry{\ry*.5} % vertical radius inner ellipse
-                \def\rx{.3}        % horizontal radius outer ellipse
-                \def\krx{\rx*.5} % horizontal radius inner ellipse
-
-                \begin{tikzpicture}[scale=3]
-                    % outer ellipse
-                    \draw ([shift=(0:{\ry} and \rx)]0,0) arc (0:360:{\ry} and \rx);
-                    % hole (inner ellipse)
-                    \draw ([shift=(190:{\kry} and \krx)]0,\kry*.25) arc (190:350:{\kry} and \krx);
-                    \draw ([shift=(315:{\kry} and \krx)]0,\kry*.25) arc (45:135:{\kry} and \krx);
+                \begin{tikzpicture}[scale=0.6, every node/.style={transform shape}]
+                    \draw (-2,0) node[left] {$\varphi_a$} -- (0,0) -- (1.5,1.5) node[above right] {$\varphi_b$} (0,0) -- (1.5,-1.5) node[below right] {$\varphi_c$};
+                    \draw[->,yshift=5pt] (-1.7,0) -- (-0.7,0) node[midway,above] {$p_1$};
+                    \draw[<-,yshift=5pt] (0.4,0.4) -- (1.2,1.2) node[midway,above left] {$p_2$};
+                    \draw[<-,xshift=5pt] (0.4,-0.4) -- (1.2,-1.2) node[midway,above right] {$p_3$};
+                    \draw[fill=white,postaction={pattern=north east lines}] (0,0) circle (0.25) node[right=5pt] {$\Gamma_{k,abc}^{(3)}(p_1,p_2,p_3)$};
                 \end{tikzpicture}
             \end{center}
         \end{column}
         \begin{column}{0.5\textwidth}
-            \begin{enumerate}
-                \item \lipsum[6][6]
-                \item \lipsum[6][7]
-                \item \lipsum[6][8]
-                \item \lipsum[6][9]
-            \end{enumerate}
-            \begin{block}{\centering Something very\\ important!}
-                \vspace{-3cm}
-            \end{block}
+            Beside, an example of tikz picture by \href{https://tikz.net/feynman-3/}{Janosh Riebesel l}. Below is a verbatim example, pay attention to the [fragile] parameter in line 123 (frame environtment).
         \end{column}
     \end{columns}
+            \begin{block}{\tiny Feynman (3-Point Vertex)}
+\begin{Verbatim}[fontsize=\tiny]
+\begin{tikzpicture}
+  \draw (-2,0) node[left] {$\varphi_a$} -- (0,0) -- (1.5,1.5) node[above right] {$\varphi_b$} (0,0) -- (1.5,-1.5) node[below right] {$\varphi_c$};
+  \draw[->,yshift=5pt] (-1.7,0) -- (-0.7,0) node[midway,above] {$p_1$};
+  \draw[<-,yshift=5pt] (0.4,0.4) -- (1.2,1.2) node[midway,above left] {$p_2$};
+  \draw[<-,xshift=5pt] (0.4,-0.4) -- (1.2,-1.2) node[midway,above right] {$p_3$};
+  \draw[fill=white,postaction={pattern=north east lines}] (0,0) circle (0.25) node[right=5pt] {$\Gamma_{k,abc}^{(3)}(p_1,p_2,p_3)$};
+\end{tikzpicture}
+\end{Verbatim}
+            \end{block}
 \end{frame}
 
 \end{document}

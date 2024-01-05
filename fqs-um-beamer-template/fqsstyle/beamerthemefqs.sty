@@ -24,7 +24,7 @@
     \begin{tikzpicture}
         % if you want to set the box to some custom place instead of allign it evenly you need to use boundingbox
         % \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
-        \node[text width=0.7*\the\paperwidth,anchor=south west,inner sep=0pt,fill=white,opacity=0.67,text opacity=1] at (0,0.4*\the\paperheight) {%
+        \node[text width=0.7*\the\paperwidth,anchor=south west,inner sep=0pt,fill=white,opacity=0.80,text opacity=1] at (0,0.4*\the\paperheight) {%
             \begin{beamercolorbox}[wd=\textwidth,sep=20pt, leftskip=0mm]{title box}%
                 {\setstretch{1.15}\usebeamerfont{title}\textcolor{umBlue}{\inserttitle}\par }\vspace{0.5em}
 
@@ -174,7 +174,7 @@
 
 
 %% =====================================
-%% itemize bullets
+%% itemize and enumerate bullets
 %%
 \setbeamertemplate{itemize item}{\tikz{\node[rectangle,
         draw=umOrange,
@@ -188,6 +188,11 @@
         minimum width=12px] {};}}
 \setbeamertemplate{itemize subsubitem}{\scalebox{1.6}{\textcolor{umBlackLitleLighter}{$\blacktriangleright$}}}
 
+\setbeamertemplate{enumerate items}[square]
+
+% item indentation
+\setlength{\leftmargini}{0.5cm}
+\setlength{\leftmarginii}{0.5cm}
 
 %% =====================================
 %% Fonts
